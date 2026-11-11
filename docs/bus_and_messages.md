@@ -332,7 +332,7 @@ class PublicMessages:
     DEBUG_PLOT = Message("debug/plot", dict)
     PIPELINE_STATS = Message("pipeline/stats", PipelineStats)
 
-    @staticmethod
+    @staticmethod #直接退化成普通函数,这样好在内聚,好看
     def pred(target_type) -> Message:
         return Message(f"pred/{target_type.value}", Prediction)
 ```
